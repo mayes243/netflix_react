@@ -1,6 +1,6 @@
 ## How to use
 
-- run `git clone https://github.com/mayeskhatri243/node-project-setup.git`
+- run `https://github.com/mayeskhatri243/netflix_react.git`
 - run `npm install`
 - run `npm start`
 
