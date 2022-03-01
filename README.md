@@ -1,3 +1,9 @@
+## How to use
+
+- run `git clone https://github.com/mayeskhatri243/node-project-setup.git`
+- run `npm install`
+- run `npm start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
