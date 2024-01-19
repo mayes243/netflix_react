@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Tab, TabList, Tabs, TabPanel } from "react-tabs";
 import TabDoor from "./tabs_nav/TabDoor";
+import { useSpring, animated } from "react-spring";
 import "../css/TabsNav.css";
 import TabDevices from "./tabs_nav/TabDevices";
 import TabPrices from "./tabs_nav/TabPrices";
@@ -60,18 +61,34 @@ class TabComponent extends Component {
             </Tab>
           </TabList>
           {/* tabs content */}
-          <TabPanel>
-            <TabContentOne />
-          </TabPanel>
-          <TabPanel>
-            <TabContentTwo />
-          </TabPanel>
-          <TabPanel>
-            <TabContentThree />
-          </TabPanel>
+          <AnimatedContent active={this.state.tabIndex === 0}>
+            <TabPanel className={`tab-panel ${this.state.tabIndex === 0 ? "tab-active" : ""}`}>
+              <TabContentOne />
+            </TabPanel>
+          </AnimatedContent>
+          <AnimatedContent active={this.state.tabIndex === 1}>
+            <TabPanel className={`tab-panel ${this.state.tabIndex === 1 ? "tab-active" : ""}`}>
+              <TabContentTwo />
+            </TabPanel>
+          </AnimatedContent>
+          <AnimatedContent active={this.state.tabIndex === 2}>
+            <TabPanel className={`tab-panel ${this.state.tabIndex === 2 ? "tab-active" : ""}`}>
+              <TabContentThree />
+            </TabPanel>
+          </AnimatedContent>
         </Tabs>
       </div>
     );
   }
 }
 export default TabComponent;
+
+const AnimatedContent = ({ children, active }) => {
+  const props = useSpring({
+    opacity: active ? 1 : 0,
+    transform: active ? "scale(1)" : "scale(0.8)",
+    config: { mass: 1, tension: 170, friction: 26 },
+  });
+
+  return <animated.div style={props}>{children}</animated.div>;
+};
