@@ -5,6 +5,7 @@ import checkmarklogo from "../images/Checkmark.png";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "../components/Button";
 import FooterChoosePlan from "../components/choose_plan/FooterChoosePlan";
+import { generateMedia } from "styled-media-query";
 
 class ChoosePlan extends React.Component {
   componentDidMount() {
@@ -23,11 +24,7 @@ class ChoosePlan extends React.Component {
         </div>
         {/* header-content */}
         <div className="header-content">
-          <img
-            className="checkmark-logo"
-            src={checkmarklogo}
-            alt="checkmarklogo"
-          />
+          <img className="checkmark-logo" src={checkmarklogo} alt="checkmarklogo" />
           <p>
             {" "}
             Step <strong>1 </strong> of <strong>3</strong>
@@ -35,9 +32,7 @@ class ChoosePlan extends React.Component {
           <h2>Choose your plan.</h2>
           <div className="checked-list">
             <div className="bullet">No commitments, cancel anytime.</div>
-            <div className="bullet">
-              Everything on Netflix for one low price.
-            </div>
+            <div className="bullet">Everything on Netflix for one low price.</div>
             <div className="bullet">Unlimited viewing on all your devices.</div>
           </div>
           <Button>see the plans</Button>
@@ -48,6 +43,12 @@ class ChoosePlan extends React.Component {
   }
 }
 export default ChoosePlan;
+
+// media
+const custommedia = generateMedia({
+  tablet: "640px",
+  lgTablet: "740px",
+});
 
 // const ChooseWrapper
 const ChooseWrapper = styled.div`
@@ -135,8 +136,11 @@ const Logo = styled.img`
   width: 10.5rem;
   height: 3.5rem;
   position: absolute;
-  top: 49%;
-  left: 8%;
-  transform: translate(-50%, -50%);
-  margin-left: 0;
+  top: 1.5rem;
+  left: 1.5rem;
+
+  ${custommedia.lessThan("tablet")`
+  width: 6rem;
+  height: 2rem;
+  `}
 `;

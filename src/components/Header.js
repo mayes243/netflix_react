@@ -24,8 +24,7 @@ class Header extends Component {
           <SubTitle>watch anywhere.cancel anytime</SubTitle>
           <Link to="/choose-plan">
             <Button primary className="offer-btn">
-              try it now{" "}
-              <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37} />{" "}
+              try it now <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37} />{" "}
             </Button>
           </Link>
         </div>
@@ -74,7 +73,7 @@ const SubTitle = styled.h1`
   margin: 0 0 1.875rem;
   text-transform: uppercase;
   color: #fff;
-  ${custommedia.lessThan("smtablet")`
+  ${custommedia.lessThan("smTablet")`
         font-size:1.4rem;
         margin:0;
         `}

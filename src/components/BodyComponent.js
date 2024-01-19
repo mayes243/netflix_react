@@ -22,9 +22,7 @@ class TabComponent extends Component {
         >
           <TabList className="tab-nav-container">
             <Tab
-              className={`${
-                this.state.tabIndex === 0 ? "tab-selected active" : null
-              }`}
+              className={`${this.state.tabIndex === 0 ? "tab-selected active tab-no-focus" : null}`}
             >
               <TabDoor />
               <p style={{ marginBottom: "1.875rem" }} className="lgScreen">
@@ -39,9 +37,7 @@ class TabComponent extends Component {
               </span>
             </Tab>
             <Tab
-              className={`${
-                this.state.tabIndex === 1 ? "tab-selected active" : null
-              }`}
+              className={`${this.state.tabIndex === 1 ? "tab-selected active tab-no-focus" : null}`}
             >
               <TabDevices />
               <p style={{ marginTop: "-5.3175rem" }} className="lgScreen">
@@ -53,9 +49,7 @@ class TabComponent extends Component {
               </span>
             </Tab>
             <Tab
-              className={`${
-                this.state.tabIndex === 2 ? "tab-selected active" : null
-              }`}
+              className={`${this.state.tabIndex === 2 ? "tab-selected active tab-no-focus" : null}`}
             >
               <TabPrices />
               <p className="lgScreen">

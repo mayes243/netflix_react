@@ -1,17 +1,17 @@
-import React from 'react';
-import MainPage from './pages/MainPage';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import LoginPage from './pages/Login';
-import ChoosePlan from './pages/ChoosePlan';
+import React from "react";
+import MainPage from "./pages/MainPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/Login";
+import ChoosePlan from "./pages/ChoosePlan";
 
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path='/' exact component={MainPage} />
-        <Route path='/login' exact component={LoginPage} />
-        <Route path='/choose-plan' exact component={ChoosePlan} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/choose-plan" element={<ChoosePlan />} />
+      </Routes>
     </BrowserRouter>
   );
 }
